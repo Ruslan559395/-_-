@@ -1,0 +1,336 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,*:before,*:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+@import url(color.css) screen and (color);
+
+html,
+body {}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+@media (max-width:1250px){
+  .container{
+    max-width: 970px;
+  }
+}
+@media (max-width:992px){
+  .container{
+    max-width: 750px;
+  }
+}
+@media (max-width:767px){
+  .container{
+    max-width: none;
+  }
+}
+
+/*Стили для header*/
+
+.header {
+  position: relative;
+}
+
+.header:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #aedbf5;
+}
+
+.header__row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+}
+
+.header__logo {
+  width: 70px;
+  height: 70px;
+  background: url(../img/icons8-davinci-resolve-96.png) 0 0/contain no-repeat;
+}
+
+.header__menu {}
+.menu {}
+.menu__icon {}
+
+.icon__menu {
+  display: none;
+}
+
+.menu__body {}
+
+.menu__list {
+  position: relative;
+  display: flex;
+}
+
+.menu__list a{
+  height: 50px;
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px inset #f7112c;
+  background-color: #dfedf7;
+  margin: 0px 0px 0px 25px;
+  padding: 0px 3px 0px 5px;
+  color: #000;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu__list a:hover{
+  background: linear-gradient(to bottom right, #afa8f7, pink);
+}
+
+.menu__list span{
+  top: 14px;
+  position: relative;
+  padding: 10px 40px 10px 0px;
+}
+
+.menu__link-1 span{
+  background: url(../img/icons8-студентка-96.png) right/40px 40px no-repeat;
+}
+.menu__link-2 span{
+  background: url(../img/icons8-гомер-симпсон-96.png) right/40px 40px no-repeat;
+}
+.menu__link-3 span{
+  background: url(../img/icons8-мужчина-с-типом-кожи-4-96.png) right/40px 40px no-repeat;
+}
+.menu__link-4 span{
+  background: url(../img/icons8-фермер-женщина-96.png) right/40px 40px no-repeat;
+}
+.menu__link-5 span{
+  background: url(../img/icons8-пожилая-женщина,-тип-кожи-2-96.png) right/40px 40px no-repeat;
+}
+.menu__link-6 span{
+  background: url(../img/icons8-супер-герой-мужчина-96.png) right/40px 40px no-repeat;
+}
+
+@media (max-width:1250px){
+  .menu__list a{
+    height: 45px;
+    margin: 0px 0px 0px 18px;
+    font-size: 15px;
+  }
+  .menu__list span{
+    top: 13px;
+    background-size: 32px 32px;
+    padding: 10px 32px 10px 0px;
+  }
+}
+
+@media (max-width:992px){
+  .header__logo {
+  width: 65px;
+  height: 65px;
+  }
+  .menu__list a{
+  height: 40px;
+  font-size: 14px;
+  }
+  .menu__list span{
+    top: 11px;
+  }
+  .menu__list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width:767px){
+  body.lock{
+  overflow: hidden;
+  }
+  .header:before{
+    z-index: 1;
+  }
+  .header__row{
+    height: 60px;
+  }
+    .header__logo {
+  margin-left: 15px;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  }
+  .icon-menu {
+    margin-right: 15px;
+    z-index: 1;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+  .icon-menu span{
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+  }
+  .icon-menu:before,
+  .icon-menu:after{
+    content: '';
+    background-color: #000;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+  .icon-menu:before{
+    top: 0;
+  }
+  .icon-menu:after{
+    bottom: 0;
+  }
+  .icon-menu.active span{
+    transform: scale(0);
+  }
+  .icon-menu.active:before{
+    transform:rotate(45deg);
+    top: 9px;
+  }
+  .icon-menu.active:after{
+    transform:rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__menu{}
+  .menu__body {
+    position: absolute;
+    top: -468px;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+    transition: all 0.3s ease 0s;
+    background-color: #aedbf5;
+    padding: 70px 0px 20px 0px;
+  }
+  .container {
+    padding: 0;
+  }
+  .menu__list span {
+    background: none;
+    padding: 0;
+    top: 6px;
+    letter-spacing: 10px;
+    margin-left: 6px;
+  }
+  .menu__body.active{
+    top: 0;
+  }
+  .menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  }
+  .menu__list a{
+    width: 80%;
+    margin: 10px auto;
+    font-size: 24px;
+    border: none;
+  }
+}
+
+
+
+.text-parent {
+  margin: 370px 0px 100px 0px;
+  perspective: 700px;
+}
+
+.text-body {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  transform-style: preserve-3d;
+  width: 60%;
+  height: 250px;
+  margin: 85px auto 0;
+}
+
+.text-mother,
+.text-back {
+  cursor: pointer;
+  position: absolute;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  border: 1px solid #30f;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,1);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-mother {
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  background-color: green;
+}
+
+.text-back {
+  transform: rotateY(-180deg);
+}
+
+@media (max-width:767px){
+   .text-body{
+    width: 80%;
+    height: 150px;
+  }
+}
